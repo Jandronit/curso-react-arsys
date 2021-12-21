@@ -1,12 +1,18 @@
 import React from 'react';
-class Header extends React.Component {
+
+interface IHeaderComponentProps {
+    content: string;
+}
+
+class HeaderComponent extends React.Component<IHeaderComponentProps, Record<string, unknown>> {
     public render(): React.ReactNode {
-        const me: Header = this;
+        const me: HeaderComponent = this;
+
         return (
             <h1>
-                Hola mundo soy Jandrohen
+                {me.props.content}
             </h1>
         );
     }
 }
-export default Header;
+export default HeaderComponent;
